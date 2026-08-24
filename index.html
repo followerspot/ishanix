@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<!--
+DISCLAIMER:
+We are only a third-party service provider responsible for website/landing-page
+development and technical services. We are not affiliated with, associated with,
+representing, endorsing, or promoting any individual, group, channel, organization,
+or activity mentioned on this website.
+
+We do not personally know, represent, or have any relationship with the individuals
+or entities referred to on this page. The service provider has no responsibility
+for the claims, content, activities, transactions, communications, or outcomes
+associated with any third party.
+
+All information and links are provided by the respective client/third party.
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishani Roy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1918658812851619');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1404750494863610&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: #070720;
+            overflow-x: hidden;
+            color: white;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            box-sizing: border-box;
+        }
+
+        /* floating particles */
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            opacity: .6;
+            animation: move 10s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0)
+            }
+
+            100% {
+                transform: translateY(-1000px)
+            }
+        }
+
+        /* card */
+
+        .card {
+            width: 360px;
+            max-width: 95vw;
+            padding: 45px 30px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            box-shadow: 0 0 60px #1e3fff33;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            .card {
+                width: 100%;
+                max-width: 98vw;
+                padding: 28px 8px;
+                border-radius: 18px;
+            }
+            .profile-wrap {
+                width: 90px;
+                height: 90px;
+            }
+            .profile {
+                width: 80px;
+                height: 80px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+            .btn {
+                padding: 14px 18px;
+                font-size: 16px;
+            }
+            .text {
+                font-size: 12px;
+            }
+        }
+
+        /* profile */
+
+        .profile-wrap {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-spinner {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 50%;
+            z-index: 1;
+            pointer-events: none;
+            background: conic-gradient(#1e90ff 0deg, #7b2fff 120deg, #fff 240deg, #4a9eff9c 360deg);
+            filter: blur(1.5px);
+            animation: spinBorder 2.2s linear infinite;
+        }
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #4a9eff;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            /* Remove animatedShadow from profile */
+        }
+        @keyframes spinBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes animatedShadow {
+            0% {
+                box-shadow: 0 0 10px 2px #4a9eff99, 0 0 16px 4px #7b2fff99;
+            }
+            50% {
+                box-shadow: 0 0 16px 4px #7b2fffcc, 0 0 20px 6px #4a9effcc;
+            }
+            100% {
+                box-shadow: 0 0 10px 2px #4a9eff99, 0 0 16px 4px #7b2fff99;
+            }
+        }
+
+        /* heading */
+
+        h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        /* text */
+
+        .text {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: .9;
+            margin-bottom: 30px;
+        }
+
+        /* CTA button */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 40px;
+            border-radius: 60px;
+            background: linear-gradient(45deg, #1e90ff, #7b2fff);
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+            animation: pulse 1.6s ease-in-out infinite;
+            box-shadow: 0 0 10px 2px #1e90ff88;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 10px 2px #1e90ff88; }
+            20% { transform: scale(1.08); box-shadow: 0 0 18px 6px #1e90ffcc; }
+            40% { transform: scale(1); }
+            60% { transform: scale(1.05); box-shadow: 0 0 14px 4px #7b2fffaa; }
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* circular timer */
+
+        .timer {
+            margin-top: 25px;
+            font-size: 14px;
+            opacity: .9;
+        }
+
+        /* disclaimer */
+
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 11px;
+            opacity: .6;
+            text-align: center;
+        }
+
+        .ads {
+            margin-top: 6px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .ads a {
+            color: #00f5ff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        body {
+    position: relative;
+    min-height: 100vh;
+    background: #070720;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url(download.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+}
+    </style>
+
+</head>
+
+<body>
+
+    
+    <div>
+
+        <div class="card">
+
+            <div class="profile-wrap">
+                <span class="profile-spinner"></span>
+                <img src="download.jpg" class="profile">
+            </div>
+
+            <h2 style="padding-bottom: 5px;">Ishani Roy</h2>
+
+            <div class="text">
+                <p style="padding-bottom: 10px;">✅ 12 Year Expert Tripper ✅</p>
+                <p style="padding-bottom: 10px;">Daily clean & structured updates delivered directly to your Telegram. No spam. No confusion. Just useful insights you can rely on.</p>
+                <p>
+                ✅ No spam, only genuine updates <br>
+                ✅ Real-time alerts & notifications
+                </p>
+            </div>
+
+            <a class="btn" href="https://t.me/+ThbQJSURInRmYWY1">
+
+                <i class="fab fa-telegram"></i>
+
+                Join Now Free
+
+                <i class="fab fa-telegram"></i>
+
+            </a>
+
+             <div class="timer">
+                Redirecting in <span id="count">05</span> seconds...
+            </div> 
+
+        </div>
+
+      
+    </div>
+    <script>
+  const timerElem = document.getElementById('count');
+  let countdownTimer;
+
+  function startRedirectCountdown() {
+    clearInterval(countdownTimer);
+
+    let seconds = 5;
+
+    if (timerElem) {
+      timerElem.textContent = String(seconds).padStart(2, '0');
+    }
+
+    countdownTimer = setInterval(() => {
+      seconds--;
+
+      if (seconds <= 0) {
+        clearInterval(countdownTimer);
+
+        window.location.href = "https://t.me/+ThbQJSURInRmYWY1";
+        return;
+      }
+
+      if (timerElem) {
+        timerElem.textContent = String(seconds).padStart(2, '0');
+      }
+    }, 1000);
+  }
+
+  // First visit + every time user comes back with Back button
+  window.addEventListener('pageshow', function () {
+    startRedirectCountdown();
+  });
+</script>
+
+</body>
+
+</html>
