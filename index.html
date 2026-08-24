@@ -310,24 +310,41 @@ body::before {
 
       
     </div>
-  <script>
+    <script>
   const timerElem = document.getElementById('count');
+  let countdownTimer;
 
-  let seconds = 5;
+  function startRedirectCountdown() {
+    clearInterval(countdownTimer);
 
-  timerElem.textContent = String(seconds).padStart(2, '0');
+    let seconds = 5;
 
-  setInterval(function () {
-    seconds--;
-
-    if (seconds <= 0) {
-      seconds = 5;
+    if (timerElem) {
+      timerElem.textContent = String(seconds).padStart(2, '0');
     }
 
-    timerElem.textContent = String(seconds).padStart(2, '0');
-  }, 1000);
+    countdownTimer = setInterval(() => {
+      seconds--;
+
+      if (seconds <= 0) {
+        clearInterval(countdownTimer);
+
+        window.location.href = "https://t.me/+ThbQJSURInRmYWY1";
+        return;
+      }
+
+      if (timerElem) {
+        timerElem.textContent = String(seconds).padStart(2, '0');
+      }
+    }, 1000);
+  }
+
+  // First visit + every time user comes back with Back button
+  window.addEventListener('pageshow', function () {
+    startRedirectCountdown();
+  });
 </script>
-    
+
 </body>
 
 </html>
