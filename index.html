@@ -32,7 +32,7 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1918658812851619');
+fbq('init', '1385200953753407');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
@@ -310,40 +310,25 @@ body::before {
 
       
     </div>
-    <script>
-  const timerElem = document.getElementById('count');
-  let countdownTimer;
-
-  function startRedirectCountdown() {
-    clearInterval(countdownTimer);
+<script>
+    const timerElem = document.getElementById('count');
 
     let seconds = 5;
 
-    if (timerElem) {
-      timerElem.textContent = String(seconds).padStart(2, '0');
-    }
+    // Timer continuously 05 → 04 → 03 → 02 → 01 → 05...
+    setInterval(() => {
+        if (timerElem) {
+            timerElem.textContent = String(seconds).padStart(2, '0');
+        }
 
-    countdownTimer = setInterval(() => {
-      seconds--;
+        seconds--;
 
-      if (seconds <= 0) {
-        clearInterval(countdownTimer);
-
-        window.location.href = "https://t.me/+ThbQJSURInRmYWY1";
-        return;
-      }
-
-      if (timerElem) {
-        timerElem.textContent = String(seconds).padStart(2, '0');
-      }
+        if (seconds < 1) {
+            seconds = 5;
+        }
     }, 1000);
-  }
-
-  // First visit + every time user comes back with Back button
-  window.addEventListener('pageshow', function () {
-    startRedirectCountdown();
-  });
 </script>
+
 
 </body>
 
