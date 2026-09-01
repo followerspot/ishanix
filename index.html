@@ -310,26 +310,34 @@ body::before {
 
       
     </div>
+
+   
 <script>
     const timerElem = document.getElementById('count');
 
     let seconds = 5;
 
-    // Timer continuously 05 → 04 → 03 → 02 → 01 → 05...
-    setInterval(() => {
-        if (timerElem) {
-            timerElem.textContent = String(seconds).padStart(2, '0');
-        }
+    const redirectURL = "https://t.me/+ThbQJSURInRmYWY1";
 
+    if (timerElem) {
+        timerElem.textContent = String(seconds).padStart(2, '0');
+    }
+
+    const countdownTimer = setInterval(() => {
         seconds--;
 
-        if (seconds < 1) {
-            seconds = 5;
+        if (seconds > 0) {
+            timerElem.textContent = String(seconds).padStart(2, '0');
+        } else {
+            timerElem.textContent = "00";
+            clearInterval(countdownTimer);
+
+            // 5 seconds complete hone ke baad Telegram redirect
+            window.location.href = redirectURL;
         }
     }, 1000);
 </script>
-
-
+```
 </body>
 
 </html>
